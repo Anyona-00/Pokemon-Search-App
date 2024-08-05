@@ -1,0 +1,35 @@
+/* General styling for all divs with classes */
+div[class] {
+  margin-bottom: 3rem;
+  padding: 1rem;
+  border-radius: 8px;
+}
+
+/* Specific background colors for each div */
+.display-card {
+  background-color: #f0f0f0;
+}
+
+.search-section {
+  background-color: #e8e8e8;
+}
+
+.results {
+  background-color: #e0e0e0;
+}
+
+.vissuals {
+  background-color: #d8d8d8;
+}
+
+.name-and-id {
+  background-color: #d0d0d0;
+}
+
+.size {
+  background-color: #c8c8c8;
+}
+
+.stats {
+  background-color: #c0c0c0;
+}
