@@ -3,67 +3,136 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Pokémon Search App</title>
+    <title>Pokédex</title>
     <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
-    <div class="display-card">
-      <div class="search-section">
-        <input type="text" id="search-input" required />
-        <button id="search-button">Search</button>
+    <div class="pokedex-container">
+      <div class="pokedex-header">
+        <div class="pokeball-icon"></div>
+        <h1 class="pokedex-title">Pokédex</h1>
       </div>
-
-      <div class="results">
-        <div class="vissuals">
-          <div class="name-and-id">
-            <span id="pokemon-name"></span>
-            <span id="pokemon-id"></span>
+      <div class="pokedex-content">
+        <div class="search-section">
+          <h2>Search for a Pokémon</h2>
+          <div class="search-input-group">
+            <input
+              type="text"
+              id="search-input"
+              placeholder="Enter name or ID (e.g., pikachu or 25)"
+              required
+            />
+            <button id="search-button">Search</button>
           </div>
+        </div>
 
-          <div class="size">
-            <div class="size">
-              <span>Weight: <span id="weight"></span></span>
-              <span>Height: <span id="height"></span></span>
+        <div class="results">
+          <div class="card">
+            <div class="card-header">
+              <span id="pokemon-name">POKÉMON</span>
+              <span id="pokemon-id">#000</span>
+            </div>
+            <div class="card-content">
+              <div class="pokemon-image-container">
+                <img
+                  id="sprite"
+                  src="/api/placeholder/200/200"
+                  alt="Pokémon sprite"
+                />
+              </div>
+
+              <div class="size-container">
+                <div class="size-item">
+                  <span class="size-label">Weight</span>
+                  <span class="size-value"><span id="weight">?</span> kg</span>
+                </div>
+                <div class="size-item">
+                  <span class="size-label">Height</span>
+                  <span class="size-value"><span id="height">?</span> m</span>
+                </div>
+              </div>
+
+              <div id="types"></div>
             </div>
           </div>
-          <div id="types"></div>
-        </div>
 
-        <div class="stats">
-          <table>
-            <tbody>
-              <tr>
-                <th>Base</th>
-                <th>Stats</th>
-              </tr>
-              <tr>
-                <td>HP:</td>
-                <td id="hp"></td>
-              </tr>
-              <tr>
-                <td>Attack:</td>
-                <td id="attack"></td>
-              </tr>
-              <tr>
-                <td>Defense:</td>
-                <td id="defense"></td>
-              </tr>
-              <tr>
-                <td>Sp. Attack:</td>
-                <td id="special-attack"></td>
-              </tr>
-              <tr>
-                <td>Sp. Defense:</td>
-                <td id="special-defense"></td>
-              </tr>
-              <tr>
-                <td>Speed:</td>
-                <td id="speed" class="speed"></td>
-              </tr>
-            </tbody>
-          </table>
+          <div class="card">
+            <div class="stats-header">
+              <span>Base Stats</span>
+              <span>Total: <span id="total-stats">0</span></span>
+            </div>
+            <div class="stats-content">
+              <div class="stat-row">
+                <div class="stat-name">HP</div>
+                <div class="stat-value" id="hp">0</div>
+                <div class="stat-bar-container">
+                  <div
+                    class="stat-bar hp-bar"
+                    id="hp-bar"
+                    style="width: 0%"
+                  ></div>
+                </div>
+              </div>
+              <div class="stat-row">
+                <div class="stat-name">Attack</div>
+                <div class="stat-value" id="attack">0</div>
+                <div class="stat-bar-container">
+                  <div
+                    class="stat-bar attack-bar"
+                    id="attack-bar"
+                    style="width: 0%"
+                  ></div>
+                </div>
+              </div>
+              <div class="stat-row">
+                <div class="stat-name">Defense</div>
+                <div class="stat-value" id="defense">0</div>
+                <div class="stat-bar-container">
+                  <div
+                    class="stat-bar defense-bar"
+                    id="defense-bar"
+                    style="width: 0%"
+                  ></div>
+                </div>
+              </div>
+              <div class="stat-row">
+                <div class="stat-name">Sp. Attack</div>
+                <div class="stat-value" id="special-attack">0</div>
+                <div class="stat-bar-container">
+                  <div
+                    class="stat-bar special-attack-bar"
+                    id="special-attack-bar"
+                    style="width: 0%"
+                  ></div>
+                </div>
+              </div>
+              <div class="stat-row">
+                <div class="stat-name">Sp. Defense</div>
+                <div class="stat-value" id="special-defense">0</div>
+                <div class="stat-bar-container">
+                  <div
+                    class="stat-bar special-defense-bar"
+                    id="special-defense-bar"
+                    style="width: 0%"
+                  ></div>
+                </div>
+              </div>
+              <div class="stat-row">
+                <div class="stat-name">Speed</div>
+                <div class="stat-value" id="speed">0</div>
+                <div class="stat-bar-container">
+                  <div
+                    class="stat-bar speed-bar"
+                    id="speed-bar"
+                    style="width: 0%"
+                  ></div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
+      <div class="footer">Designed for Pokémon lovers • Powered by PokéAPI</div>
     </div>
     <script src="script.js"></script>
   </body>
